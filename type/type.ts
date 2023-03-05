@@ -84,7 +84,8 @@ export interface ProductsType {
 };
 
 export type ProductsContextType = {
-    products: ProductsType;
+    products: ProductsType
+    loading: boolean
     getListProducts: () => void
     addProducts: (id: number) => void
     removeProducts: (id:number, all:boolean) => void
