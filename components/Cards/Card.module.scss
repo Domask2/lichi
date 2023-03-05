@@ -1,0 +1,22 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  width: var(--cardWidth);
+  height: var(--cardHeight);
+  margin: var(--cardMargin);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+
+  &_title {
+    text-align: center;
+  }
+
+  &_btn {
+    padding: 5px;
+    cursor: pointer;
+  }
+}
