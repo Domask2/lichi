@@ -1,5 +1,3 @@
-import { headers } from 'next/headers';
-
 export const getCookieResponse = (response: any, name: string) =>
     (response.headers['set-cookie'] as string[])
         .find(cookie => cookie.includes(name))
