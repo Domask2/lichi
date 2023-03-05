@@ -22,6 +22,7 @@
     "@typescript-eslint/no-shadow": "off",
     "react/require-default-props": "off",
     "no-shadow": "off",
+    "no-unused-vars": "off",
     "import/no-extraneous-dependencies": "off",
     "spaced-comment": "off",
     "react/function-component-definition": [

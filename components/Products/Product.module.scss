@@ -1,0 +1,23 @@
+.product {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+
+  &_btn {
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 480px) {
+ .product {
+   flex-direction: column;
+
+ }
+}

@@ -11,7 +11,7 @@ const Card = ({ card }: { card: number }) => {
     return (
         <div className={styles.card}>
             <h3 className={styles.card_title}>{card}</h3>
-            <button className={styles.card_btn} onClick={() => handlerClick(card)}>Добавить</button>
+            <button className={styles.card_btn} onClick={() => handlerClick(card)}>добавить</button>
         </div>
     );
 };
