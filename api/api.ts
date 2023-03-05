@@ -22,7 +22,7 @@ export const addProduct = (id: number) => {
     return axios.post('api/addProduct', { lang: api.LANG, shop: api.SHOP, id, sid });
 };
 
-export const removeProducts = (id: number, all: boolean) => {
+export const removeProduct = (id: number, all: boolean) => {
     const sid = checkCookie();
-    return axios.post('api/deleteProduct', { lang: api.LANG, shop: api.SHOP, id, sid, all });
+    return axios.post('api/removeProduct', { lang: api.LANG, shop: api.SHOP, id, sid, all });
 };

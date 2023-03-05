@@ -14,7 +14,7 @@ export interface aDataType {
         price: string;
     };
     colors_all: any[];
-    count: string;
+    count: number;
     currency: {
         id: number;
         prefix: string;
@@ -81,4 +81,20 @@ export interface ProductsType {
     iNonSalePrice: number
     iSalePrice: number
     iSummaryPrice: number
+};
+
+export type ProductsContextType = {
+    products: ProductsType;
+    getListProducts: () => void
+    addProducts: (id: number) => void
+    removeProducts: (id:number, all:boolean) => void
+};
+
+export const initProduct = {
+    aData: [],
+    iCount: 0,
+    iCountSale: 0,
+    iNonSalePrice: 0,
+    iSalePrice: 0,
+    iSummaryPrice: 0,
 };

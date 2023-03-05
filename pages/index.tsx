@@ -1,8 +1,8 @@
 import { useProducts } from '@/contex/ProductsContex';
 import { FC, useEffect } from 'react';
 import Cards from '@/components/Cards/Cards';
-import styles from '../styles/App.module.scss';
 import Products from '@/components/Products/Products';
+import styles from '../styles/App.module.scss';
 
 interface HomeProps {
     cards: number[];

@@ -1,26 +1,12 @@
 import { createContext, useState, useContext, useMemo, ReactNode } from 'react';
-import { addProduct, getProducts } from '@/api/api';
-import { aDataType, ProductsType } from '@/type/type';
-
-export type ProductsContextType = {
-    products: ProductsType;
-    getListProducts: () => void
-    addProducts: (id: number) => void
-};
-
-const initProduct = {
-    aData: [],
-    iCount: 0,
-    iCountSale: 0,
-    iNonSalePrice: 0,
-    iSalePrice: 0,
-    iSummaryPrice: 0,
-};
+import { addProduct, getProducts, removeProduct } from '@/api/api';
+import { initProduct, ProductsContextType, ProductsType } from '@/type/type';
 
 const ProductsContext = createContext<ProductsContextType>({
     products: initProduct,
     getListProducts: () => {},
     addProducts: () => {},
+    removeProducts: () => {}
 });
 
 export const ProductsProvider = ({ children }: { children: ReactNode }) => {
@@ -38,7 +24,12 @@ export const ProductsProvider = ({ children }: { children: ReactNode }) => {
         await getListProducts();
     };
 
-    const value = useMemo(() => ({ products, getListProducts, addProducts }), [products, setProducts]);
+    const removeProducts = async (id: number, all: boolean) => {
+        await removeProduct(id, all)
+        await getListProducts();
+    }
+
+    const value = useMemo(() => ({ products, getListProducts, addProducts, removeProducts }), [products, setProducts]);
 
     return (
         <ProductsContext.Provider value={value}>
