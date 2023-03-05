@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { useProducts } from '@/contex/ProductsContex';
+import Button from '@/components/Button/Button';
 import { aDataType } from '@/type/type';
 import styles from './Product.module.scss';
 
@@ -30,23 +31,11 @@ const Product: FC<ProductType> = ({ product }) => {
         <div className={styles.product}>
             <div>{product.name}</div>
             {/*<div>{product.count}</div>*/}
-            {/*<button*/}
-            {/*    className={styles.product_btn}*/}
-            {/*    onClick={() => handlerAddProduct(product.item_id)}*/}
-            {/*>*/}
-            {/*    +*/}
-            {/*</button>*/}
-            {/*<button*/}
-            {/*    className={styles.product_btn}*/}
-            {/*    onClick={() => handlerRemoveProduct(product.item_id, product.count)}*/}
-            {/*>*/}
-            {/*    -*/}
-            {/*</button>*/}
-            <button
-                className={styles.product_btn}
-                onClick={() => handlerRemoveProduct(product.item_id, product.count)}
-
-            >Remove</button>
+            {/*<Button onClick={() => handlerAddProduct(product.item_id)}>+</Button>*/}
+            {/*<Button onClick={() => handlerRemoveProduct(product.item_id, product.count)}>-</Button>*/}
+            <Button onClick={() => handlerRemoveProduct(product.item_id, product.count)}>
+                Удалить из корзины
+            </Button>
         </div>
     );
 };

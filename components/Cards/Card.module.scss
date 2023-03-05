@@ -7,12 +7,17 @@
   width: var(--cardWidth);
   height: var(--cardHeight);
   margin: var(--cardMargin);
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 1px solid #e4eaf3;
+  border-radius: 2px;
   background: #fff;
 
   &_title {
+    font-size: 16px;
     text-align: center;
+
+    &:hover {
+      color: #b3b3b3;
+    }
   }
 
   &_btn {

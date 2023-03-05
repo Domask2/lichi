@@ -1,4 +1,5 @@
 import { useProducts } from '@/contex/ProductsContex';
+import Button from '@/components/Button/Button';
 import styles from './Card.module.scss';
 
 const Card = ({ card }: { card: number }) => {
@@ -11,7 +12,7 @@ const Card = ({ card }: { card: number }) => {
     return (
         <div className={styles.card}>
             <h3 className={styles.card_title}>{card}</h3>
-            <button className={styles.card_btn} onClick={() => handlerClick(card)}>добавить</button>
+            <Button animation={false} onClick={() => handlerClick(card)}>добавить</Button>
         </div>
     );
 };
