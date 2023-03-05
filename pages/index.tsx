@@ -1,23 +1,32 @@
 import { useProducts } from '@/contex/ProductsContex';
-import { useEffect } from 'react';
-import { getProducts } from '@/api/api';
+import { FC, useEffect } from 'react';
+import Cards from '@/components/Cards/Cards';
 import styles from '../styles/App.module.scss';
 
-const Home = () => {
-    const { setProducts } = useProducts();
+interface HomeProps {
+    cards: number[];
+}
+
+const Home: FC<HomeProps> = ({ cards }) => {
+    const { getListProducts } = useProducts();
 
     useEffect(() => {
-        getProducts()
-            .then((res) => {
-                setProducts(res.data.data.api_data);
-            });
+        getListProducts();
     }, []);
 
     return (
         <div className={styles.App}>
-            Hello Lichi
+            <Cards cards={cards} />
         </div>
     );
 };
 
 export default Home;
+
+export async function getServerSideProps() {
+    return {
+        props: {
+            cards: [94267, 94268, 94269],
+        },
+    };
+}

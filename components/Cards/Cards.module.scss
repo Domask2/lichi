@@ -1,0 +1,12 @@
+.cards {
+  display: flex;
+  margin: 20px;
+  gap: 20px;
+
+  .card {
+    &_button {
+      padding: 20px;
+      cursor: pointer;
+    }
+  }
+}
