@@ -31,8 +31,8 @@ const Product: FC<ProductType> = ({ product }) => {
         <div className={styles.product}>
             <div>{product.name}</div>
             {/*<div>{product.count}</div>*/}
-            {/*<Button onClick={() => handlerAddProduct(product.item_id)}>+</Button>*/}
-            {/*<Button onClick={() => handlerRemoveProduct(product.item_id, product.count)}>-</Button>*/}
+            {/*<Button animation={false} onClick={() => handlerAddProduct(product.item_id)}>+</Button>*/}
+            {/*<Button animation={false} onClick={() => handlerRemoveProduct(product.item_id, product.count)}>-</Button>*/}
             <Button onClick={() => handlerRemoveProduct(product.item_id, product.count)}>
                 Удалить из корзины
             </Button>
